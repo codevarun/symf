@@ -1,13 +1,7 @@
-# Demo
-_welcome:
+_index:
     pattern: /
     defaults: 
         _controller: AcmeDemoBundle:Welcome:index
-
-_demo:
-    resource: "@AcmeDemoBundle/Controller/DemoController.php"
-    type: annotation
-    prefix: /demo
 
 _assetic:
     resource: .

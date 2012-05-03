@@ -1,11 +1,14 @@
 parameters:
-    mongodb_server:    mongodb://localhost:27017
-    mongodb_database:  localhost
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_name:     symf
+    database_user:     user
+    database_password: password
 
-    mailer_transport:  smtp
+    mailer_transport:  mail
     mailer_host:       localhost
     mailer_user:       ~
     mailer_password:   ~
 
-    locale:            fr
+    locale:            ru
     secret:            ThisTokenIsNotSoSecretChangeIt

@@ -1,3 +1,4 @@
+app/config/*.dist
 app/cache/*
 app/logs/*
 app/*.cache
