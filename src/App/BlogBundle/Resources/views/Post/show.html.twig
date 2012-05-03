@@ -1,45 +1,18 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-<h1>Post</h1>
-
-<table class="record_properties">
-    <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
-        <tr>
-            <th>Title</th>
-            <td>{{ entity.title }}</td>
-        </tr>
-        <tr>
-            <th>Content</th>
-            <td>{{ entity.content }}</td>
-        </tr>
-        <tr>
-            <th>Created_at</th>
-            <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
-        </tr>
-    </tbody>
-</table>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('post') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('post_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('post_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
-        </form>
-    </li>
-</ul>
+<div class="post">
+  <div class="leftbar">
+    <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
+    <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
+    <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
+    <div class="meta"><a href="{{ path('post_show', { 'id': entity.id }) }}#comments">10 Comments</a></div>
+  </div>
+  <div class="post-header">
+    {{ entity.title }}
+  </div>
+  <div class="post-content">
+    {{ entity.content | raw }}
+  </div>
+</div>
 {% endblock %}
