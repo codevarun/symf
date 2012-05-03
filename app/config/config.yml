@@ -66,6 +66,10 @@ fos_user:
     user_class: App\UserBundle\Entity\User
 
 services:
+    twig.extension.text:
+      class: Twig_Extensions_Extension_Text
+      tags:
+         - { name: twig.extension }
     gedmo.listener.timestampable:
         class: Gedmo\Timestampable\TimestampableListener
         tags:

@@ -14,6 +14,7 @@
         "doctrine/doctrine-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "*",
         "gedmo/doctrine-extensions": "master-dev",
+        "twig/extensions": "dev-master",
         "knplabs/knp-markdown-bundle": "dev-master"
     },
     "suggest": {
