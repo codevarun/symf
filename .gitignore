@@ -1,4 +1,4 @@
-app/config/*.dist
+app/config/parameters.yml
 app/cache/*
 app/logs/*
 app/*.cache

@@ -9,7 +9,10 @@
         "sensio/buzz-bundle": "dev-master",
         "sensio/distribution-bundle": "dev-master",
         "sensio/framework-extra-bundle": "dev-master",
-        "sensio/generator-bundle": "dev-master"
+        "sensio/generator-bundle": "dev-master",
+        "doctrine/orm": "2.2.0",
+        "doctrine/doctrine-bundle": "dev-master",
+        "friendsofsymfony/user-bundle": "*"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",
