@@ -27,7 +27,14 @@ class PostController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AppBlogBundle:Post')->findAll();
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBlogBundle:Post');
+
+        $query = $repository->createQueryBuilder('p')
+            ->orderBy('p.created_at', 'DESC')
+            ->getQuery();
+
+        $entities = $query->getResult();
 
         return array(
             'entities' => $entities,
