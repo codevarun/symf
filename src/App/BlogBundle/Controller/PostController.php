@@ -49,11 +49,8 @@ class PostController extends Controller
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
 
-        $deleteForm = $this->createDeleteForm($id);
-
         return array(
             'entity'      => $entity,
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -115,18 +112,17 @@ class PostController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AppBlogBundle:Post')->find($id);
+        $user = $this->container->get('security.context')->getToken()->getUser();
 
-        if (!$entity) {
+        if (!$entity || $entity->getUser() != $user) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
 
         $editForm = $this->createForm(new PostType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
     }
 
@@ -142,13 +138,13 @@ class PostController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('AppBlogBundle:Post')->find($id);
+        $user = $this->container->get('security.context')->getToken()->getUser();
 
-        if (!$entity) {
+        if (!$entity || $entity->getUser() != $user) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
 
         $editForm   = $this->createForm(new PostType(), $entity);
-        $deleteForm = $this->createDeleteForm($id);
 
         $request = $this->getRequest();
 
@@ -164,43 +160,6 @@ class PostController extends Controller
         return array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         );
-    }
-
-    /**
-     * Deletes a Post entity.
-     *
-     * @Route("/{id}/delete", name="post_delete")
-     * @Method("post")
-     */
-    public function deleteAction($id)
-    {
-        $form = $this->createDeleteForm($id);
-        $request = $this->getRequest();
-
-        $form->bindRequest($request);
-
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('AppBlogBundle:Post')->find($id);
-
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Post entity.');
-            }
-
-            $em->remove($entity);
-            $em->flush();
-        }
-
-        return $this->redirect($this->generateUrl('post'));
-    }
-
-    private function createDeleteForm($id)
-    {
-        return $this->createFormBuilder(array('id' => $id))
-            ->add('id', 'hidden')
-            ->getForm()
-        ;
     }
 }

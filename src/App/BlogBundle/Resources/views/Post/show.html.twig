@@ -10,6 +10,9 @@
   </div>
   <div class="post-header">
     {{ entity.title }}
+    {% if app.user == entity.user %}
+    <a href="{{ path('post_edit', { 'id': entity.id }) }}"><img class="icon" src="{{ asset('/images/edit.png') }}" alt="редактировать" title="редактировать"/></a>
+    {% endif %}
   </div>
   <div class="post-content">
     {{ entity.content | markdown }}

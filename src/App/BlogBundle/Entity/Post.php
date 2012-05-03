@@ -53,7 +53,7 @@ class Post
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,13 +69,14 @@ class Post
     public function setTitle($title)
     {
         $this->title = $title;
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -91,13 +92,14 @@ class Post
     public function setContent($content)
     {
         $this->content = $content;
+
         return $this;
     }
 
     /**
      * Get content
      *
-     * @return text 
+     * @return text
      */
     public function getContent()
     {
@@ -113,13 +115,14 @@ class Post
     public function setCreatedAt($createdAt)
     {
         $this->created_at = $createdAt;
+
         return $this;
     }
 
     /**
      * Get created_at
      *
-     * @return time 
+     * @return time
      */
     public function getCreatedAt()
     {
@@ -135,13 +138,14 @@ class Post
     public function setUser(\App\UserBundle\Entity\User $user = null)
     {
         $this->user = $user;
+
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return App\UserBundle\Entity\User 
+     * @return App\UserBundle\Entity\User
      */
     public function getUser()
     {

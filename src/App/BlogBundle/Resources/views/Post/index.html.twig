@@ -10,7 +10,10 @@
         <div class="meta"><a href="{{ path('post_show', { 'id': entity.id }) }}#comments">10 Comments</a></div>
       </div>
       <div class="post-header">
-        <a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.title }}</a> 
+        <a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.title }}</a>
+        {% if app.user == entity.user %}
+        <a href="{{ path('post_edit', { 'id': entity.id }) }}"><img class="icon" src="{{ asset('/images/edit.png') }}" alt="редактировать" title="редактировать"/></a>
+        {% endif %}
       </div>
       <div class="post-content">
         {{ entity.content | truncate(400) | markdown  }}

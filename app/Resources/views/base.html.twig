@@ -10,8 +10,11 @@
     <body>
         <div id="wrap">
           <header>
-            <div class="logo"><img src="http://symfony.com/images/common/logo/logo_symfony_header.png" alt="Symfony"/></div>
+            <div class="logo">
+                <a href="{{ path('_index') }}"><img src="http://symfony.com/images/common/logo/logo_symfony_header.png" alt="Symfony"/></a>
+            </div>
             <ul class="rght">
+              <li><a href="{{ path('post_new') }}"><img class="icon" src="{{ asset('/images/plus.png') }}" alt="написать" title="написать"/></a></li>
               <li class="active"><a href="{{ path('post') }}">Статьи</a></li>
               <li><a href="#">Форум</a></li>
             </ul>
