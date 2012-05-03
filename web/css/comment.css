@@ -1,0 +1,10 @@
+.fos_comment_comment_form_holder {
+	margin-left: 20px;
+	width: 500px;
+}
+#fos_comment_comment_body {
+	height: 100px;
+}
+#fos_comment_thread {
+	margin-left: 20px;
+}

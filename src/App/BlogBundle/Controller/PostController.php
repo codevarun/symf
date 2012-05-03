@@ -155,7 +155,7 @@ class PostController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('post_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('post_show', array('id' => $id)));
         }
 
         return array(
@@ -173,6 +173,7 @@ class PostController extends Controller
     {
         $rawContent = $this->getRequest()->request->get('content');
         $content = $this->container->get('markdown.parser')->transform($rawContent);
+
         return new Response($content);
     }
 }

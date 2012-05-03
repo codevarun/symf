@@ -15,7 +15,8 @@
         "friendsofsymfony/user-bundle": "*",
         "gedmo/doctrine-extensions": "master-dev",
         "twig/extensions": "dev-master",
-        "knplabs/knp-markdown-bundle": "dev-master"
+        "knplabs/knp-markdown-bundle": "dev-master",
+        "friendsofsymfony/comment-bundle": "dev-master"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",

@@ -18,4 +18,5 @@
     {{ entity.content | markdown }}
   </div>
 </div>
+{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'post_' ~ entity.id} %}
 {% endblock %}
