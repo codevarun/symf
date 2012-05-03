@@ -8,7 +8,8 @@
         "symfony/assetic-bundle": "dev-master",
         "sensio/buzz-bundle": "dev-master",
         "sensio/distribution-bundle": "dev-master",
-        "sensio/framework-extra-bundle": "dev-master"
+        "sensio/framework-extra-bundle": "dev-master",
+        "sensio/generator-bundle": "dev-master"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",

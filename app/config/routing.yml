@@ -1,3 +1,13 @@
+_index:
+    pattern: /
+    defaults: 
+        _controller: AppBlogBundle:Post:index
+
+AppBlogBundle:
+    resource: "@AppBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
