@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use App\BlogBundle\Entity\Post;
 use App\BlogBundle\Form\PostType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Post controller.
@@ -161,5 +162,17 @@ class PostController extends Controller
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
         );
+    }
+
+    /**
+     * Displays post preview
+     *
+     * @Route("/preview", name="post_preview")
+     */
+    public function previewAction()
+    {
+        $rawContent = $this->getRequest()->request->get('content');
+        $content = $this->container->get('markdown.parser')->transform($rawContent);
+        return new Response($content);
     }
 }

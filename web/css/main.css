@@ -43,6 +43,7 @@ header {
 .rght li {
   display: inline;
   padding: 2px 5px;
+  margin-left: 0px;
 }
 .active a {
   font-weight: bold;
@@ -121,4 +122,10 @@ label {
 textarea {
   width: 100%;
   height: 300px;
+}
+button {
+  padding: 2px;
+}
+li {
+  margin-left: 20px;
 }
