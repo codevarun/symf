@@ -13,7 +13,8 @@
         "doctrine/orm": "2.2.0",
         "doctrine/doctrine-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "*",
-        "gedmo/doctrine-extensions": "master-dev"
+        "gedmo/doctrine-extensions": "master-dev",
+        "knplabs/knp-markdown-bundle": "dev-master"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",

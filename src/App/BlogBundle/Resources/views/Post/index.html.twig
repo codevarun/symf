@@ -13,7 +13,7 @@
         <a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.title }}</a> 
       </div>
       <div class="post-content">
-        {{ entity.content | raw }}
+        {{ entity.content | markdown }}
       </div>
       <div class="more">
         <a href="{{ path('post_show', { 'id': entity.id }) }}">Read More...</a>

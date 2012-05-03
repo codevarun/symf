@@ -12,7 +12,7 @@
     {{ entity.title }}
   </div>
   <div class="post-content">
-    {{ entity.content | raw }}
+    {{ entity.content | markdown }}
   </div>
 </div>
 {% endblock %}

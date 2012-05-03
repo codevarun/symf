@@ -63,9 +63,13 @@ header {
   border-bottom: 1px solid #EFEFEF;
   padding-bottom: 20px;
   margin-top: 20px;
+  min-height: 100px;
 }
 .post:first-child {
   margin-top: 0px;
+}
+.post-content {
+  padding-left: 20px;
 }
 .leftbar {
   float: left;
