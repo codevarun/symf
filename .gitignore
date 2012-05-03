@@ -7,3 +7,5 @@ web/uploads/*
 vendor
 composer.phar
 composer.lock
+*.php~
+*.twig~

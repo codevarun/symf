@@ -12,7 +12,8 @@
         "sensio/generator-bundle": "dev-master",
         "doctrine/orm": "2.2.0",
         "doctrine/doctrine-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "*"
+        "friendsofsymfony/user-bundle": "*",
+        "gedmo/doctrine-extensions": "master-dev"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",

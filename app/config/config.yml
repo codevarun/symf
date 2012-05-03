@@ -64,3 +64,11 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: App\UserBundle\Entity\User
+
+services:
+    gedmo.listener.timestampable:
+        class: Gedmo\Timestampable\TimestampableListener
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
+        calls:
+            - [ setAnnotationReader, [ @annotation_reader ] ]
