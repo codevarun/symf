@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new FOS\CommentBundle\FOSCommentBundle(),
+            new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
             new App\BlogBundle\AppBlogBundle(),
             new App\CommentBundle\AppCommentBundle(),
             new App\UserBundle\AppUserBundle(),
