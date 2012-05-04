@@ -30,7 +30,7 @@
                 Новости <a href="http://twitter.com/symfonyru"><img class="icon" src="{{ asset('/images/twitter.png') }}" alt="twitter" title="twitter"/></a></li>
               </div>
               <div class="sb-content">
-                {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'symfonyru'} %}
+                {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'symfonyru', 'limit': 5} %}
               </div>
           </aside>
           <div id="content">

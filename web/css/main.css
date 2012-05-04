@@ -30,6 +30,7 @@ header {
   margin-right: 280px;
   margin-top: -20px;
   display: block;
+  overflow: hidden;
 }
 .logo {
   padding-left: 20px;
