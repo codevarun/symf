@@ -17,7 +17,9 @@
         "twig/extensions": "dev-master",
         "knplabs/knp-markdown-bundle": "dev-master",
         "friendsofsymfony/comment-bundle": "dev-master",
-        "knplabs/knp-last-tweets-bundle": "*"
+        "knplabs/knp-last-tweets-bundle": "*",
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",

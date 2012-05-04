@@ -66,6 +66,21 @@ fos_user:
     user_class: App\UserBundle\Entity\User
 
 services:
+    app.user.admin.user:
+      class: App\UserBundle\Admin\UserAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Пользователи, label: Пользователи}
+      arguments: [null, App\UserBundle\Entity\User, SonataAdminBundle:CRUD]
+    app.blog.admin.post:
+      class: App\BlogBundle\Admin\PostAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Блог, label: Посты}
+      arguments: [null, App\BlogBundle\Entity\Post, SonataAdminBundle:CRUD]
+    app.comment.admin.comment:
+      class: App\CommentBundle\Admin\CommentAdmin
+      tags:
+        - { name: sonata.admin, manager_type: orm, group: Комментарии, label: Комментарии}
+      arguments: [null, App\CommentBundle\Entity\Comment, SonataAdminBundle:CRUD]
     twig.extension.text:
       class: Twig_Extensions_Extension_Text
       tags:
@@ -115,3 +130,24 @@ fos_comment:
 sensio_framework_extra:
     view:
         annotations: false
+
+sonata_admin:
+    title: Symfony
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        #sonata.admin_doctrine_orm.block.audit:
+        #    contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.action:
+        sonata.block.service.rss:
+
+        # Some specific block from the SonataMediaBundle
+        #sonata.media.block.media:
+        #sonata.media.block.gallery:
+        #sonata.media.block.feature_media:

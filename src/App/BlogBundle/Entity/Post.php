@@ -167,13 +167,14 @@ class Post
     public function setSlug($slug)
     {
         $this->slug = $slug;
+
         return $this;
     }
 
     /**
      * Get slug
      *
-     * @return string 
+     * @return string
      */
     public function getSlug()
     {
