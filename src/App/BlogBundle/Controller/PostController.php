@@ -13,7 +13,6 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Post controller.
  *
- * @Route("/post")
  */
 class PostController extends Controller
 {
@@ -44,14 +43,14 @@ class PostController extends Controller
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id}/show", name="post_show")
+     * @Route("/post/{slug}", name="post_show")
      * @Template()
      */
-    public function showAction($id)
+    public function showAction($slug)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AppBlogBundle:Post')->find($id);
+        $entity = $em->getRepository('AppBlogBundle:Post')->findOneBy(array('slug' => $slug));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Post entity.');

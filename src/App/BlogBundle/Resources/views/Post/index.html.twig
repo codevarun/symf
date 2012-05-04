@@ -1,5 +1,10 @@
 {% extends '::base.html.twig' %}
 
+{% block javascripts %}
+  {{ parent() }}
+  <script src="{{ asset('/js/comments.js') }}" type="text/javascript"></script>
+{% endblock %}
+
 {% block body %}
     {% for entity in entities %}
     <div class="post">
@@ -7,9 +12,10 @@
         <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
         <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
         <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
+        <div class="meta"><a href="{{ path('post_show', { 'slug': entity.slug }) }}#fos_comment_thread"><span class="fos-comment-count" data-fos-comment-thread-id="post_{{ entity.id }}">#</span></a></div>
       </div>
       <div class="post-header">
-        <a href="{{ path('post_show', { 'id': entity.id }) }}">{{ entity.title }}</a>
+        <a href="{{ path('post_show', { 'slug': entity.slug }) }}">{{ entity.title }}</a>
         {% if app.user == entity.user %}
         <a href="{{ path('post_edit', { 'id': entity.id }) }}"><img class="icon" src="{{ asset('/images/edit.png') }}" alt="редактировать" title="редактировать"/></a>
         {% endif %}
@@ -18,7 +24,7 @@
         {{ entity.content | truncate(400) | markdown  }}
       </div>
       <div class="more">
-        <a href="{{ path('post_show', { 'id': entity.id }) }}">Read More...</a>
+        <a href="{{ path('post_show', { 'slug': entity.slug }) }}">Read More...</a>
       </div>
     </div>
     {% endfor %}
