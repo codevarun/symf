@@ -1,18 +1,27 @@
 {% extends '::base.html.twig' %}
 
-{% block javascripts %}
-  {{ parent() }}
-  <script src="{{ asset('/js/comments.js') }}" type="text/javascript"></script>
-{% endblock %}
-
 {% block body %}
+    {% javascripts '@FOSCommentBundle/Resources/assets/js/comments.js' %}
+    <script type="text/javascript">
+        var fos_comment_thread_api_base_url = '/comment/api/threads';
+    (function() {
+        var fos_comment_script = document.createElement('script');
+        fos_comment_script.async = true;
+        fos_comment_script.src = '{{ asset_url }}';
+        fos_comment_script.type = 'text/javascript';
+
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(fos_comment_script);
+    })();
+    </script>
+    {% endjavascripts %}
+
     {% for entity in entities %}
     <div class="post">
       <div class="leftbar">
         <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
         <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
         <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
-        <div class="meta"><a href="{{ path('post_show', { 'slug': entity.slug }) }}#fos_comment_thread"><span class="fos-comment-count" data-fos-comment-thread-id="post_{{ entity.id }}">#</span></a></div>
+        <div class="meta"><a href="{{ path('post_show', { 'slug': entity.slug }) }}#fos_comment_thread">Comments: <span class="fos-comment-count" data-fos-comment-thread-id="post_{{ entity.id }}">#</span></a></div>
       </div>
       <div class="post-header">
         <a href="{{ path('post_show', { 'slug': entity.slug }) }}">{{ entity.title }}</a>

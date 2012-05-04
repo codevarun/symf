@@ -8,3 +8,9 @@
 #fos_comment_thread {
 	margin-left: 20px;
 }
+a .fos-comment-count {
+	color: #000;
+}
+a:hover .fos-comment-count {
+	color: #4183C4;
+}
