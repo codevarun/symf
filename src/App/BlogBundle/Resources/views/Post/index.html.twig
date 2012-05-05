@@ -15,14 +15,18 @@
     </script>
     {% endjavascripts %}
 
+    <table style="vertical-align: top; text-align: left; padding-left: 10px;">
     {% for entity in entities %}
-    <div class="post">
+    <tr>
+      <td style="vertical-align: top; text-align: left">
       <div class="leftbar">
         <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
         <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
         <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
         <div class="meta"><a href="{{ path('post_show', { 'slug': entity.slug }) }}#fos_comment_thread">Comments: <span class="fos-comment-count" data-fos-comment-thread-id="post_{{ entity.id }}">0</span></a></div>
       </div>
+      </td>
+      <td style="vertical-align: top; text-align: left">
       <div class="post-header">
         <a href="{{ path('post_show', { 'slug': entity.slug }) }}">{{ entity.title }}</a>
         {% if app.user == entity.user %}
@@ -35,6 +39,8 @@
       <div class="more">
         <a href="{{ path('post_show', { 'slug': entity.slug }) }}">Read More...</a>
       </div>
-    </div>
+      </td>
+    </tr>
     {% endfor %}
+    </table>
 {% endblock %}

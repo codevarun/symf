@@ -72,6 +72,7 @@ header {
 }
 .post-content {
   padding-left: 20px;
+  min-height: 100px;
 }
 .leftbar {
   float: left;
@@ -94,7 +95,7 @@ a:hover {
 .post-header {
   font-size: 1.2em;
   font-weight: bold;
-  margin-left: 140px;
+  margin-left: 20px;
   font-family: Verdana,sans-serif;
 }
 .sb-header {
@@ -133,4 +134,11 @@ li {
 }
 pre {
   clear: both;
+}
+.footbar {
+  margin: 20px 0px;
+}
+.footbar .meta {
+  float: left;
+  margin-left: 20px;
 }

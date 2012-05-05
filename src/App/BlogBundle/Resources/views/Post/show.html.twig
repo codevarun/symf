@@ -2,11 +2,6 @@
 
 {% block body %}
 <div class="post">
-  <div class="leftbar">
-    <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
-    <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
-    <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
-  </div>
   <div class="post-header">
     {{ entity.title }}
     {% if app.user == entity.user %}
@@ -15,6 +10,11 @@
   </div>
   <div class="post-content">
     {{ entity.content | markdown }}
+  </div>
+  <div class="footbar">
+    <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
+    <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
+    <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
   </div>
 </div>
 {% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': 'post_' ~ entity.id} %}
