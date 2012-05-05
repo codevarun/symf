@@ -99,7 +99,7 @@ class PostController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('post_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('post_show', array('slug' => $entity->getSlug())));
         }
 
         return array(
@@ -161,7 +161,7 @@ class PostController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('post_show', array('id' => $id)));
+            return $this->redirect($this->generateUrl('post_show', array('slug' => $entity->getSlug())));
         }
 
         return array(

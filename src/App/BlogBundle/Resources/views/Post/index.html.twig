@@ -21,7 +21,7 @@
         <div class="meta">Date: {{ entity.createdat|date('n M Y') }}</div>
         <div class="meta">Author: <a href="#">{{ entity.user.username }}</a></div>
         <div class="meta">Tags: <a href="#">boston</a>, <a href="#">photography</a></div>
-        <div class="meta"><a href="{{ path('post_show', { 'slug': entity.slug }) }}#fos_comment_thread">Comments: <span class="fos-comment-count" data-fos-comment-thread-id="post_{{ entity.id }}">#</span></a></div>
+        <div class="meta"><a href="{{ path('post_show', { 'slug': entity.slug }) }}#fos_comment_thread">Comments: <span class="fos-comment-count" data-fos-comment-thread-id="post_{{ entity.id }}">0</span></a></div>
       </div>
       <div class="post-header">
         <a href="{{ path('post_show', { 'slug': entity.slug }) }}">{{ entity.title }}</a>

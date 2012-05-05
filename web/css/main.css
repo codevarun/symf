@@ -131,3 +131,6 @@ button {
 li {
   margin-left: 20px;
 }
+pre {
+  clear: both;
+}
