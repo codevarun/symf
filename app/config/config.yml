@@ -151,3 +151,18 @@ sonata_block:
         #sonata.media.block.media:
         #sonata.media.block.gallery:
         #sonata.media.block.feature_media:
+
+hwi_oauth:
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           %facebook_client_id%
+            client_secret:       %facebook_client_secret%
+            scope:               ""
+    fosub:
+        username_iterations: 30
+        # mapping between resource owners (see below) and properties
+        properties:
+            #github: githubId
+            #google: googleId
+            facebook: facebookId

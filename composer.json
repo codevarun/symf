@@ -19,7 +19,8 @@
         "friendsofsymfony/comment-bundle": "dev-master",
         "knplabs/knp-last-tweets-bundle": "*",
         "sonata-project/admin-bundle": "dev-master",
-        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "hwi/hwi-oauth-bundle": "*"
     },
     "suggest": {
         "mageekguy/atoum": "dev-xunit",
