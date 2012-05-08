@@ -3,11 +3,6 @@ _index:
     defaults: 
         _controller: AppBlogBundle:Post:index
 
-AppBlogBundle:
-    resource: "@AppBlogBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
@@ -16,6 +11,14 @@ _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
+
+hwi_oauth_security:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix: /login/sc
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix: /register/sc
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -37,12 +40,20 @@ fos_user_change_password:
     prefix: /profile
 
 facebook_login:
-    pattern: /login/facebook
+    pattern: /login/check-facebook
+
+vkontakte_login:
+    pattern: /login/check-vkontakte
 
 fos_comment_api:
    type: rest
    resource: "@FOSCommentBundle/Resources/config/routing.yml"
    prefix: /comment/api
+
+AppBlogBundle:
+    resource: "@AppBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 # Internal routing configuration to handle ESI
 #_internal:

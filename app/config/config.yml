@@ -159,6 +159,11 @@ hwi_oauth:
             client_id:           %facebook_client_id%
             client_secret:       %facebook_client_secret%
             scope:               ""
+        vkontakte:
+            type:                vkontakte
+            client_id:           %vkontakte_client_id%
+            client_secret:       %vkontakte_client_secret%
+            scope:               ""
     fosub:
         username_iterations: 30
         # mapping between resource owners (see below) and properties
@@ -166,3 +171,6 @@ hwi_oauth:
             #github: githubId
             #google: googleId
             facebook: facebookId
+            vkontakte: vkontakteId
+    firewall_name: main
+    connect: ~

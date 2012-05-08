@@ -25,7 +25,15 @@
               <li><a href="{{ path('post_new') }}"><img class="icon" src="{{ asset('/images/plus.png') }}" alt="написать" title="написать"/></a></li>
               <li class="active"><a href="{{ path('post') }}">Статьи</a></li>
               <li><a href="#">Форум</a></li>
-            </ul>
+            </ul><br>
+            <div class="user">
+              {% if app.user %}
+              Привет, <strong><a href="#">{{ app.user.username }}</a></strong>!
+              <a href="{{ path('fos_user_profile_edit') }}">Профиль</a>
+              <a href="{{ path('fos_user_security_logout') }}">Выход</a>
+              {% else %}
+              {% endif %}
+            </div>
           </header>
           <div class="sep"></div>
           <aside id="sidebar">
